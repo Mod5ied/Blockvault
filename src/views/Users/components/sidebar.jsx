@@ -11,11 +11,13 @@ import account from "../../../assets/account.svg";
 import compass from "../../../assets/compass.svg";
 import deposit from "../../../assets/deposit.svg";
 import lifeguard from "../../../assets/lifeguard.svg";
+import { useNavigate } from "react-router-dom";
 import { usersState, useToggleState } from "../../../services/state/state";
 
 function sidebar({ handleShow, width }) {
 	const [sideWidth, setSideWidth] = useState(width);
 	const toggleGuestState = useToggleState(usersState);
+	const navigate = useNavigate()
 
 	useEffect(() => {
 		setSideWidth(width);
@@ -34,12 +36,13 @@ function sidebar({ handleShow, width }) {
 		// 		console.error(error);
 		// 	});
 	};
+	const toAdmin = () => navigate("/admin/dashboard");
 
 	return (
-		<section className="flex flex-col items-center gap-10 h-full bg-transparent py-5 overflow-hidden">
+		<section className="flex flex-col items-center h-full gap-10 py-5 overflow-hidden bg-transparent">
 			<div className="w-full h-[34px] flex flex-row-reverse justify-around items-center cursor-pointer">
 				<ReactSVG onClick={handleShow} src={bars} className="text-gray-100" />
-				{sideWidth == "16%" ? <img src={cluxter_logo} alt="cluxtercoin-logo" className="w-[38%] h-full" /> : null}
+				{sideWidth == "16%" ? <img onClick={toAdmin} src={cluxter_logo} alt="cluxtercoin-logo" className="w-[38%] h-full" /> : null}
 			</div>
 
 			{/* second section */}
@@ -67,7 +70,7 @@ function sidebar({ handleShow, width }) {
 
 			{/* last section */}
 			<div className="flex flex-col gap-4 h-[210px] w-full">
-				{sideWidth == "4%" ? null : <h3 className="text-sm font-bold text-gray-500 px-8">MORE</h3>}
+				{sideWidth == "4%" ? null : <h3 className="px-8 text-sm font-bold text-gray-500">MORE</h3>}
 
 				<button onClick={() => toggleGuestState("supportPage")} title="Support" className={`${sideWidth === "16%" ? "sidebar-links" : "sidebar-links-center"}`}>
 					<ReactSVG src={lifeguard} />
