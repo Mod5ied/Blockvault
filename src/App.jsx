@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import SignIn from "./views/signin/signin";
 import SignUp from "./views/signup/signup";
-import { useNavigate, useRoutes } from "react-router-dom";
+import { useNavigate, useRoutes, Navigate } from "react-router-dom";
 import AdminDashboard from "./views/Admin/main/dashboard";
 import GuestDashboard from "./views/Users/main/dashboard";
 import ResetPassword from "./views/recovery/forgotPassword";
@@ -23,6 +23,7 @@ function App() {
 	// });
 
 	let element = useRoutes([
+		{ path: "/", element: <Navigate to="/dashboard" /> },
 		{ path: "/signin", element: <SignIn /> },
 		{ path: "/signup", element: <SignUp /> },
 		{ path: "/reset_password", element: <ResetPassword /> },
