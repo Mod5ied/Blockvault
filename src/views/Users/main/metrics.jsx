@@ -25,9 +25,9 @@ function metrics({ width }) {
 
 	return (
 		// <div className={`${sideWidth == "16%" ? "w-[84%]" : "w-[96%]"} bg-gray-100`}>
-		<div className="flex flex-row h-[330px] w-full bg-gray-100">
-			<section className="w-[65%] flex flex-col gap-5">
-				<div className="flex flex-row gap-5">
+		<div className="flex flex-col md:flex-row gap-4 md:gap-0 h-[330px] w-full bg-gray-100">
+			<section className="w-full md:w-[65%] flex flex-col gap-5">
+				<div className="flex flex-col md:flex-row gap-5">
 					<span className="dash_cards">
 						<h3>Wallet Balance</h3>
 						<p> $ {balance} </p>
@@ -37,7 +37,7 @@ function metrics({ width }) {
 						<p> $ {profit} </p>
 					</span>
 				</div>
-				<div className="flex flex-row gap-5">
+				<div className="flex flex-col md:flex-row gap-5">
 					<span className="dash_cards">
 						<h3>Referral Earnings</h3>
 						<p> $ {earnings} </p>
@@ -49,7 +49,7 @@ function metrics({ width }) {
 				</div>
 			</section>
 
-			<section className="w-[35%] px-3">
+			<section className="w-full md:w-[35%] md:px-3">
 				<span className="dash_cards_ref">
 					<h3 className="h-[33%] font-bold">Referral Link</h3>
 					<p className="mt-5 text-sm">

@@ -23,6 +23,7 @@ function App() {
 	// });
 
 	let element = useRoutes([
+		/* below should route to the sign-in page, but by default the Home page */
 		{ path: "/", element: <Navigate to="/dashboard" /> },
 		{ path: "/signin", element: <SignIn /> },
 		{ path: "/signup", element: <SignUp /> },
@@ -38,7 +39,7 @@ function App() {
 		},
 	]);
 
-	return <main className="bg-gray-100 h-[1100px]">{element}</main>;
+	return <main className="bg-gray-100 h-[980px] md:h-[1100px]">{element}</main>;
 }
 
 export default App;

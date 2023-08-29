@@ -8,7 +8,7 @@ function deposit({ width }) {
 	const handleSelect = (e) => console.log(e.target.value);
 
 	return (
-		<div className="flex flex-col items-center h-full bg-gray-100">
+		<div className="flex flex-col items-center gap-7 w-full bg-red-400-100">
 			<form id="deposit_form" onClick={(e) => handleSubmit(e)}>
 				<h3 className="font-bold text-gray-50">Fund Wallet</h3>
 				<span>
@@ -31,7 +31,9 @@ function deposit({ width }) {
 			</form>
 
 			{/* FORM SECTION */}
-			<DataTable tableContext={`Deposit Transaction History`} />
+			<div className="h-[200px] w-full">
+				<DataTable tableContext={`Deposit Transaction History`} />
+			</div>
 		</div>
 	);
 }

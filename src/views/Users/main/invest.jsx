@@ -5,14 +5,18 @@ import check from "../../../assets/checked.svg";
 
 function invest() {
 	return (
-		<div className="bg-gray-100 flex flex-col h-full">
-			<section className="flex flex-row flex-wrap items-center justify-center gap-5">
+		<div className="bg-gray-100 flex flex-col gap-4 md:h-full">
+			<section className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-6 md:gap-5">
 				<div className="invest_cards">
-					<span className="flex flex-row justify-between px-5">
+					<span className="flex flex-col md:flex-row justify-between gap-2 md:gap-0 px-5">
 						<h3 className="font-bold text-gray-50">Starter Pack</h3>
-						<span className="flex flex-row gap-3">
-							<button className="bg-slate-100 text-slate-800 px-2 py-1 hover:bg-slate-200 duration-200 rounded-md text-xs font-semibold">Calculate profit</button>
-							<button className="bg-slate-800 text-slate-100 px-2 py-1 hover:bg-slate-700 duration-200 rounded-md text-xs font-bold">Purchase plan</button>
+						<span className="flex flex-row justify-between md:justify-start gap-3">
+							<button className="bg-slate-100 text-slate-800 px-2 py-1 hover:bg-slate-200 duration-200 rounded-md text-xs font-semibold">
+								Calculate profit
+							</button>
+							<button className="bg-slate-800 text-slate-100 px-2 py-1 hover:bg-slate-700 duration-200 rounded-md text-xs font-bold">
+								Purchase plan
+							</button>
 						</span>
 					</span>
 					<span className="w-full flex flex-col items-center">
@@ -33,11 +37,15 @@ function invest() {
 				</div>
 
 				<div className="invest_cards">
-					<span className="flex flex-row justify-between px-5">
+					<span className="flex flex-col md:flex-row justify-between gap-2 md:gap-0 px-5">
 						<h3 className="font-bold text-gray-50">Standard Pack</h3>
-						<span className="flex flex-row gap-3">
-							<button className="bg-slate-100 text-slate-800 px-2 py-1 hover:bg-slate-200 duration-200 rounded-md text-xs font-semibold">Calculate profit</button>
-							<button className="bg-slate-800 text-slate-100 px-2 py-1 hover:bg-slate-700 duration-200 rounded-md text-xs font-bold">Purchase plan</button>
+						<span className="flex flex-row justify-between md:justify-start gap-3">
+							<button className="bg-slate-100 text-slate-800 px-2 py-1 hover:bg-slate-200 duration-200 rounded-md text-xs font-semibold">
+								Calculate profit
+							</button>
+							<button className="bg-slate-800 text-slate-100 px-2 py-1 hover:bg-slate-700 duration-200 rounded-md text-xs font-bold">
+								Purchase plan
+							</button>
 						</span>
 					</span>
 					<span className="w-full flex flex-col items-center">
@@ -57,11 +65,15 @@ function invest() {
 					</ul>
 				</div>
 				<div className="invest_cards">
-					<span className="flex flex-row justify-between px-5">
+					<span className="flex flex-col md:flex-row justify-between gap-2 md:gap-0 px-5">
 						<h3 className="font-bold text-gray-50">Premium Pack</h3>
-						<span className="flex flex-row gap-3">
-							<button className="bg-slate-100 text-slate-800 px-2 py-1 hover:bg-slate-200 duration-200 rounded-md text-xs font-semibold">Calculate profit</button>
-							<button className="bg-slate-800 text-slate-100 px-2 py-1 hover:bg-slate-700 duration-200 rounded-md text-xs font-bold">Purchase plan</button>
+						<span className="flex flex-row justify-between md:justify-start gap-3">
+							<button className="bg-slate-100 text-slate-800 px-2 py-1 hover:bg-slate-200 duration-200 rounded-md text-xs font-semibold">
+								Calculate profit
+							</button>
+							<button className="bg-slate-800 text-slate-100 px-2 py-1 hover:bg-slate-700 duration-200 rounded-md text-xs font-bold">
+								Purchase plan
+							</button>
 						</span>
 					</span>
 					<span className="w-full flex flex-col items-center">
@@ -81,11 +93,15 @@ function invest() {
 					</ul>
 				</div>
 				<div className="invest_cards">
-					<span className="flex flex-row justify-between px-5">
+					<span className="flex flex-col md:flex-row justify-between gap-2 md:gap-0 px-5">
 						<h3 className="font-bold text-gray-50">Professional Pack</h3>
-						<span className="flex flex-row gap-3">
-							<button className="bg-slate-100 text-slate-800 px-2 py-1 hover:bg-slate-200 duration-200 rounded-md text-xs font-semibold">Calculate profit</button>
-							<button className="bg-slate-800 text-slate-100 px-2 py-1 hover:bg-slate-700 duration-200 rounded-md text-xs font-bold">Purchase plan</button>
+						<span className="flex flex-row justify-between md:justify-start gap-3">
+							<button className="bg-slate-100 text-slate-800 px-2 py-1 hover:bg-slate-200 duration-200 rounded-md text-xs font-semibold">
+								Calculate profit
+							</button>
+							<button className="bg-slate-800 text-slate-100 px-2 py-1 hover:bg-slate-700 duration-200 rounded-md text-xs font-bold">
+								Purchase plan
+							</button>
 						</span>
 					</span>
 					<span className="w-full flex flex-col items-center">
@@ -107,7 +123,9 @@ function invest() {
 			</section>
 
 			{/* FORM SECTION */}
-			<DataTable tableContext={`Deposit Transaction History`} />
+			<div className="h-[200px] w-full">
+				<DataTable tableContext={`Deposit Transaction History`} />
+			</div>
 		</div>
 	);
 }

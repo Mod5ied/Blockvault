@@ -7,27 +7,32 @@ function dataTable({ tableContext, tableData }) {
 		setDataArray(tableData);
 	}, [tableData]);
 	return (
-		<section className=" w-full mt-[50px] rounded-md bg-stone-900">
+		// <section className="w-full h-full md:mt-[50px] rounded-md bg-stone-900 overflow-x-scroll md:overflow-hidden">
+		<section className="w-full h-full rounded-md bg-stone-900 overflow-x-scroll overflow-y-hidden md:overflow-hidden">
 			<h3 className="h-[70px] text-gray-50 font-bold p-4">{tableContext}</h3>
-			<div className="flex flex-row items-center border-y border-blue-700 h-[45px]">
-				<p className="text-blue-700 text-xs w-[15%] px-3">S/N</p>
-				<p className="text-blue-700 text-xs w-[25%]">TRANSACTION ID</p>
-				<p className="text-blue-700 text-xs w-[20%]">AMOUNT</p>
-				<p className="text-blue-700 text-xs w-[15%]">METHOD</p>
-				<p className="text-blue-700 text-xs w-[15%]">STATUS</p>
-				<p className="text-blue-700 text-xs w-[10%]">CREATED</p>
+			<div className="border-y border-blue-700 h-[50px] w-[450px] md:w-full">
+				<div id="head" className="h-full">
+					<span className="h-full flex flex-row items-center">
+						<p className="text-blue-700 text-xs text-center w-[90px] md:w-[15%] px-3">S/N</p>
+						<p className="text-blue-700 text-xs text-center w-[60%] md:w-[25%]">TRANSACTION ID</p>
+						<p className="text-blue-700 text-xs text-center w-[50%] md:w-[20%]">AMOUNT</p>
+						<p className="text-blue-700 text-xs text-center w-[45%] md:w-[15%]">METHOD</p>
+						<p className="text-blue-700 text-xs text-center w-[45%] md:w-[15%]">STATUS</p>
+						<p className="text-blue-700 text-xs text-center w-[40%] md:w-[10%]">CREATED</p>
+					</span>
+				</div>
+				{(dataArray &&
+					dataArray.map((data, key) => (
+						<div id="data-loaded" className="text-gray-100 px-4 py-6">
+							<p> {data.id} </p>
+							<p> {data.transaction_id} </p>
+							<p> {data.amount} </p>
+							<p> {data.method} </p>
+							<p> {data.status} </p>
+							<p> {data.created} </p>
+						</div>
+					))) || <p className="text-gray-100 px-4 py-6">No data found</p>}
 			</div>
-			{(dataArray &&
-				dataArray.map((data, key) => (
-					<div id="data-loaded" className="text-gray-100 px-4 py-6">
-						<p> {data.id} </p>
-						<p> {data.transaction_id} </p>
-						<p> {data.amount} </p>
-						<p> {data.method} </p>
-						<p> {data.status} </p>
-						<p> {data.created} </p>
-					</div>
-				))) || <p className="text-gray-100 px-4 py-6">No data found</p>}
 		</section>
 	);
 }

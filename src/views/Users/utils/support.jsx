@@ -24,7 +24,7 @@ function support() {
 				<h3 className="text-yellow-400 text-xl font-bold">Customer Support</h3>
 				<button
 					onClick={toggleDropdown}
-					className="w-[13%] flex flex-row justify-center items-center gap-1 mb-4 px-3 py-1 rounded-md shadow-md bg-white font-bold text-sm text-blue-600"
+					className="w-[50%] md:w-[13%] flex flex-row justify-center items-center gap-1 mb-4 px-3 py-1 rounded-md shadow-md bg-white font-bold text-sm text-blue-600"
 				>
 					<ReactSVG src={arrRight} />
 					Create request

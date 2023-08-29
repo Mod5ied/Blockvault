@@ -29,7 +29,7 @@ function account({ userAccount }) {
 			<section className="w-full flex justify-center">
 				<button onClick={toggleDropdown} className="w-[60%] py-2 rounded-md shadow-md text-center bg-blue-700 text-slate-100 font-semibold">Change Password</button>
 				{/* drop-down */}
-				<animated.form style={props} className="absolute w-[40%] py-5 px-8 rounded-md shadow-md bg-white flex flex-col gap-6" onSubmit={handlePasswordChange}>
+				<animated.form style={props} className="absolute w-[90%] md:w-[40%] py-5 px-8 rounded-md shadow-md bg-white flex flex-col gap-6" onSubmit={handlePasswordChange}>
 					<section className="flex flex-row justify-between items-center px-2">
 						<h3 className="font-bold ">Change password </h3>
 						<ReactSVG onClick={toggleDropdown} src={cancel}  />
@@ -53,7 +53,7 @@ function account({ userAccount }) {
 				</animated.form>
 			</section>
 
-			<section className="w-full flex flex-row justify-between p-5">
+			<section className="w-full flex flex-col md:flex-row gap-3 md:gap-0 justify-between p-5">
 				<form id="account_form">
 					<section>
 						<h3>Username: {user.username} </h3>
@@ -84,14 +84,14 @@ function account({ userAccount }) {
 							<input className="account_form_input" type="text" id="address" onChange={(e) => setAddress(e.target.value)} />
 						</span>
 					</section>
-					<span className="w-1/2">
+					<span className="">
 						<button id="account_btn" type="submit">
 							Confirm
 						</button>
 					</span>
 				</form>
 
-				<form className="w-[30%] h-[220px] rounded-md shadow-md bg-white flex flex-col items-center" onClick={handleSubmitAvatar}>
+				<form className="w-full	 md:w-[30%] h-[220px] rounded-md shadow-md bg-white flex flex-col items-center" onClick={handleSubmitAvatar}>
 					<h3 className="w-full font-bold py-4 px-5">Change account photo</h3>
 
 					<span className="w-full py-3 px-4 flex flex-col gap-2">
