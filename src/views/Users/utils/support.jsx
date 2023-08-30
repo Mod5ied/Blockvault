@@ -15,7 +15,7 @@ function support() {
 	};
 
 	const props = useSpring({
-		transform: isOpen ? "translateY(50%) translateX(50%)" : "translateY(-100%)  translateX(50%)",
+		transform: isOpen ? "translateY(50%) translateX(0%)" : "translateY(-100%)  translateX(0%)",
 	});
 
 	return (
@@ -29,13 +29,13 @@ function support() {
 					<ReactSVG src={arrRight} />
 					Create request
 				</button>
-				<animated.form style={props} className="absolute mx-auto w-[50%] py-5 px-8 rounded-md shadow-md bg-white flex flex-col justify-around gap-6" onSubmit={createRequest}>
+				<animated.form style={props} className="absolute md:mx-auto w-full md:w-[50%] py-5 px-4 md:px-8 rounded-md shadow-md bg-white flex flex-col justify-around gap-6" onSubmit={createRequest}>
 					<section className="flex flex-col gap-2">
-						<span className="flex flex-row justify-between items-center">
+						<span className="flex flex-row gap-2 md:gap-0 justify-between items-center">
 							<label htmlFor="fullname">Subject</label>
 							<input className="account_form_input" required={true} type="text" id="fullname" onChange={(e) => setSubject(e.target.value)} />
 						</span>
-						<span className="flex flex-row justify-between items-center">
+						<span className="flex flex-row gap-2 md:gap-0 justify-between items-center">
 							<label htmlFor="fullname">Priority</label>
 							<select className="account_form_input" onChange={(e) => setPriority(e.target.value)}>
 								<option value="low">Low</option>
@@ -43,7 +43,7 @@ function support() {
 								<option value="high">High</option>
 							</select>
 						</span>
-						<span className="flex flex-row justify-between items-center">
+						<span className="flex flex-row gap-2 md:gap-0 justify-between items-center">
 							<label htmlFor="fullname">Details</label>
 							<textarea className="account_form_input" required={true} type="text" id="details" onChange={(e) => setDetails(e.target.value)} />
 						</span>
