@@ -14,8 +14,8 @@ function client() {
 	];
 
 	return (
-		<div className="bg-transparent flex flex-col gap-4 p-2 absolute h-full w-[80%] top-20">
-			<section className="flex flex-row justify-between py-2">
+		<div className="bg-transparent flex flex-col gap-4 py-2 px-2 md:p-2 absolute h-full w-full md:w-[80%] top-20">
+			<section className="flex flex-row justify-between py-2 px-4 md:px-0">
 				<h2 className="text-xl font-semibold text-gray-100">Client</h2>
 				<button onClick={() => toggleAdminState("addStaff")} className="reduce_btn" type="submit">
 					Add Staff
@@ -23,17 +23,17 @@ function client() {
 			</section>
 
 			{/* White card */}
-			<section className="w-full flex flex-col gap-8 bg-white rounded-md px-5 py-3 border">
+			<section className="w-full flex flex-col gap-8 bg-white rounded-md md:px-5 py-3 border">
 				<div>
 					<h2 className="text-xl text-gray-700">Client</h2>
 				</div>
 
 				{/* table section. */}
-				<div className="flex flex-col gap-4 w-full">
-					<div className="flex flex-row justify-between">
-						<span className="flex flex-row gap-1 items-center">
+				<div className="flex flex-col gap-4 md:w-full overflow-x-scroll">
+					<div className="flex flex-col md:flex-row justify-center md:justify-between overflow-x-scroll">
+					<span className="flex flex-row gap-1 px-4 md:px-0 items-center w-full md:w-1/2">
 							Show
-							<p className="flex flex-row gap-2 items-center justify-center px-1 rounded-md hover:bg-gray-200 border">
+							<p className="flex flex-row gap-2 text-gray-800 items-center justify-center px-1 rounded-md hover:bg-gray-200 border">
 								10
 								<span className="flex flex-col items-center">
 									<ReactSVG src={arrDown} className="hover:bg-gray-200 rounded-md p-1" />
@@ -50,46 +50,46 @@ function client() {
 							entries
 						</span>
 
-						<span className="flex flex-row items-center gap-1">
+						<span className="flex flex-row items-center md:justify-end px-4 md:px-0 gap-1 w-full md:w-1/2">
 							Search
 							<input type="text" className="border bg-gray-50 rounded-md py-1 px-2" />
 						</span>
 					</div>
 
 					{/* table below: */}
-					<div className="flex flex-col w-full">
-						<span className="flex flex-row w-full bg-blue-500 text-gray-100 rounded-t-md">
-							<h3 className="h-[60px] w-[10%] flex items-center justify-between px-1 ml-5">
+					<div className="flex flex-col w-full overflow-scroll">
+					<span className="flex flex-row w-[640px] px-4 md:px-0 md:w-full text-gray-100 bg-blue-500 md:rounded-t-md">
+							<h3 className="h-[60px] md:w-[10%] w-[4%] flex items-center justify-between px-1 ml-5">
 								S.N <ReactSVG src={arrDouble} className="text-gray-600" />
 							</h3>
-							<h3 className="h-[60px] w-[30%] flex items-center justify-between px-1 ml-5">
+							<h3 className="h-[60px] md:w-[30%] w-[35%] flex items-center justify-between px-1 ml-5">
 								Details <ReactSVG src={arrDouble} className="text-gray-600" />
 							</h3>
-							<h3 className="h-[60px] w-[20%] flex items-center justify-between px-1 ml-5">
+							<h3 className="h-[60px] md:w-[20%] w-[14%] flex items-center justify-between px-1 ml-5">
 								Username <ReactSVG src={arrDouble} className="text-gray-600" />
 							</h3>
-							<h3 className="h-[60px] w-[20%] flex items-center justify-between px-1 ml-5">
+							<h3 className="h-[60px] md:w-[20%] w-[14%] flex items-center justify-between px-1 ml-5">
 								Role <ReactSVG src={arrDouble} className="text-gray-600" />
 							</h3>
-							<h3 className="h-[60px] w-[25%] flex items-center justify-between px-1 ml-5">
+							<h3 className="h-[60px] md:w-[25%] w-[25%] flex items-center justify-between px-1 ml-5">
 								Created at <ReactSVG src={arrDouble} className="text-gray-600" />
 							</h3>
-							<h3 className="h-[60px] w-[15%] flex items-center justify-between px-1 ml-10">Actions</h3>
+							<h3 className="h-[60px] md:w-[15%] w-[25%] flex items-center justify-between px-1 ml-10">Actions</h3>
 						</span>
 						{/* 10 list below */}
 						{users.map((user, index) => {
 							return (
-								<span className={`flex flex-row w-full ${index % 2 === 0 ? "bg-gray-200" : "bg-white"}`}>
-									<p className="h-[63px] w-[10%] flex items-center justify-between px-1 ml-5">{user.id}</p>
-									<p className="h-[63px] w-[35%] flex flex-col justify-between px-1 py-1 ml-5 overflow-hidden">
+								<span className={`flex flex-row w-[640px] px-4 md:px-0 md:w-full ${index % 2 === 0 ? "bg-gray-200" : "bg-white"}`}>
+									<p className="h-[63px] w-[10%] flex text-gray-800 items-center justify-between md:px-1 md:ml-5">{user.id}</p>
+									<p className="h-[63px] w-[35%] flex text-gray-800 flex-col justify-between md:px-1 py-1 md:ml-5 overflow-hidden">
 										<h5 className="text-sm">{user.details[0]}</h5>
 										<h5 className="text-sm">{user.details[1]}</h5>
 										<h5 className="text-sm">{user.details[2]}</h5>
 									</p>
-									<p className="h-[63px] w-[20%] flex items-center justify-between px-1 ml-3">{user.username}</p>
-									<p className="h-[63px] w-[20%] flex items-center justify-between px-1 ml-3">{user.role}</p>
-									<p className="h-[63px] w-[20%] flex items-center justify-between px-1 ml-5">{user.created}</p>
-									<p className="h-[63px] w-[25%] flex items-center gap-2 justify-center pl-6">
+									<p className="h-[63px] w-[20%] flex text-gray-800 items-center justify-between px-1 md:ml-3">{user.username}</p>
+									<p className="h-[63px] w-[20%] flex text-gray-800 items-center justify-between px-1 md:ml-3">{user.role}</p>
+									<p className="h-[63px] md:w-[20%] w-[25%] flex text-gray-800 items-center justify-between px-1 md:ml-5">{user.created}</p>
+									<p className="h-[63px] md:w-[25%] w-[20%] flex items-center gap-2 justify-center pl-6">
 										<button className="px-3 py-1 rounded bg-blue-600 text-sm text-gray-50 hover:bg-blue-400 duration-200">Edit</button>
 										<ReactSVG src={bin} className="py-[0.40rem] px-3 rounded bg-red-600 text-gray-50 hover:bg-red-400 cursor-pointer duration-200" />
 									</p>

@@ -41,7 +41,7 @@ function pendingDepo() {
 					<div className="flex flex-col md:flex-row justify-center md:justify-between overflow-x-scroll">
 						<span className="flex flex-row gap-1 px-4 md:px-0 items-center w-full md:w-1/2">
 							Show
-							<p className="flex flex-row gap-2 items-center justify-center px-1 rounded-md hover:bg-gray-200 border">
+							<p className="flex flex-row gap-2 text-gray-800 items-center justify-center px-1 rounded-md hover:bg-gray-200 border">
 								10
 								<span className="flex flex-col items-center">
 									<ReactSVG src={arrDown} className="hover:bg-gray-200 rounded-md p-1" />
@@ -88,7 +88,7 @@ function pendingDepo() {
 						{pendingUsers.map((user, index) => {
 							return (
 								<span className={`flex flex-row w-[640px] px-4 md:px-0 md:w-full ${index % 2 === 0 ? "bg-gray-200" : "bg-white"}`}>
-									<p className="h-[75px] md:h-[63px] md:w-[10%] w-[15%] text-gray-800 bg-red-400 flex items-center md:px-1 md:ml-8">
+									<p className="h-[75px] md:h-[63px] md:w-[10%] w-[15%] text-gray-800 flex items-center md:px-1 md:ml-8">
 										{user.id}
 									</p>
 									<div className="h-[75px] md:h-[63px] md:w-[35%] w-[35%] text-gray-800 flex flex-col justify-between md:pl-6 py-1 md:ml-8  md:overflow-hidden">
@@ -96,7 +96,7 @@ function pendingDepo() {
 										<h5 className="text-sm">{user.details[1]}</h5>
 										<h5 className="text-sm">{user.details[2]}</h5>
 									</div>
-									<p className="h-[75px] md:h-[63px] md:w-[20%] w-[20%] text-gray-800 bg-red-500 flex items-center pl-6 ml-8">
+									<p className="h-[75px] md:h-[63px] md:w-[20%] w-[20%] text-gray-800 flex items-center pl-6 ml-8">
 										{user.username}
 									</p>
 									<p className="h-[75px] md:h-[63px] md:w-[20%] w-[10%] text-gray-800 flex items-center pl-6 md:ml-8">{user.amount}</p>

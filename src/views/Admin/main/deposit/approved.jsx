@@ -42,7 +42,7 @@ function approvedDepo() {
 					<div className="flex flex-col md:flex-row justify-center md:justify-between overflow-x-scroll">
 						<span className="flex flex-row gap-1 px-4 md:px-0 items-center w-full md:w-1/2">
 							Show
-							<p className="flex flex-row gap-2 items-center justify-center px-1 rounded-md hover:bg-gray-200 border">
+							<p className="flex flex-row gap-2 text-gray-800 items-center justify-center px-1 rounded-md hover:bg-gray-200 border">
 								10
 								<span className="flex flex-col items-center">
 									<ReactSVG src={arrDown} className="hover:bg-gray-200 rounded-md p-1" />
@@ -92,8 +92,12 @@ function approvedDepo() {
 										<h5 className="text-sm text-gray-800">{user.details[1]}</h5>
 										<h5 className="text-sm text-gray-800">{user.details[2]}</h5>
 									</div>
-									<p className="h-[65px] md:h-[63px] w-[20%] md:w-[20%] flex items-center text-gray-800 justify-between px-1 ml-5">{user.username}</p>
-									<p className="h-[65px] md:h-[63px] w-[20%] md:w-[20%] flex items-center text-gray-800 justify-between px-1 ml-5">{user.amount}</p>
+									<p className="h-[65px] md:h-[63px] w-[20%] md:w-[20%] flex items-center text-gray-800 justify-between px-1 ml-5">
+										{user.username}
+									</p>
+									<p className="h-[65px] md:h-[63px] w-[20%] md:w-[20%] flex items-center text-gray-800 justify-between px-1 ml-5">
+										{user.amount}
+									</p>
 									<div className="h-[65px] md:h-[63px] w-[20%] md:w-[25%] flex items-center text-gray-800 justify-between px-1 ml-5">
 										<p className="px-3 py-2 rounded-md bg-green-500 text-xs text-gray-100 cursor-pointer hover:bg-green-400 duration-300">
 											{user.status ? "Approved" : "Pending"}
