@@ -3,7 +3,7 @@ import Avatar from "../../../components/avatar";
 
 function account(prop) {
 	return (
-		<div id="accounts_container" className="bg-white w-[280px] h-[280px] flex flex-col absolute top-16 right-28 rounded-md shadow-sm overflow-hidden border">
+		<div id="accounts_container" className="bg-white w-[300px] md:w-[280px] h-[280px] flex flex-col absolute top-16 right-8 md:right-28 rounded-md shadow-sm overflow-hidden border">
 			<section id="accounts_section_top" className="flex flex-row justify-around items-center h-[45%] border-b">
 				<Avatar className="w-[35%] " />
 				<span className="w-[65%] flex flex-col justify-center gap-2">

@@ -42,7 +42,7 @@ function header({ setSignal, signal }) {
 			{isMobile && <ReactSVG id="options" src={options} onClick={() => setIsMobileVisible(!isMobileVisible)} />}
 
 			{!isMobileVisible && (
-				<section className="w-[200px] h-full cursor-pointer">
+				<section className="w-full md:w-[200px] absolute md:relative top-11 bg-white left-0 h-full cursor-pointer">
 					<span className="flex flex-row justify-center items-center gap-6 p-2 h-full text-gray-600">
 						{/* click to show messages */}
 						{mailState ? (

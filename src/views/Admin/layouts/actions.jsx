@@ -19,8 +19,8 @@ const actions = () => {
 	};
 
 	return (
-		<div id="actions-container" className="w-[350px] h-[380px] bg-white absolute top-15 right-32 flex flex-col overflow-hidden border rounded-sm shadow-sm">
-			<section id="actions-card-top" className="flex flex-col justify-center items-center gap-1 py-2 h-[20%] bg-blue-600">
+		<div id="actions-container" className="w-[350px] h-[380px] bg-white absolute top-15 right-3 md:right-32 flex flex-col overflow-hidden border rounded-sm shadow-sm">
+			<section id="actions-card-top" className="flex flex-col justify-center items-center gap-1 py-2 h-[20%] bg-blue-800 md:bg-blue-600">
 				<h2 className="text-lg text-slate-100 font-semibold">Quick Actions</h2>
 				<p className="text-sm text-slate-100">Shortcuts</p>
 			</section>

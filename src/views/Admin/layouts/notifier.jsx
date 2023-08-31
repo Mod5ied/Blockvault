@@ -3,7 +3,7 @@ import success from "../../../assets/success.svg"
 
 function notifier(prop) {
 	return (
-		<div className="bg-white w-[300px] h-[280px] flex flex-col absolute top-16 right-36 rounded-md overflow-hidden border">
+		<div className="bg-white w-[300px] h-[280px] flex flex-col absolute top-16 right-8 md:right-36 rounded-md overflow-hidden border">
 			<section id="notif-top" className="py-2 px-4 border-b">
 				<h3 className="font-bold">Messages</h3>
 			</section>
