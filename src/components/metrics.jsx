@@ -4,7 +4,7 @@ import { adminState, useToggleState } from "../services/state/state";
 function metrics() {
 	const toggleAdminState = useToggleState(adminState);
 	return (
-		<div className="flex flex-col w-full mt-1">
+		<div className="flex flex-col md:w-full mt-1">
 			<div className="flex flex-col gap-8 justify-center items-center">
 				<section className="h-[150px] flex flex-row justify-between items-center px-8 w-full">
 					<span className="flex flex-col justify-center gap-4 h-full">
@@ -15,7 +15,7 @@ function metrics() {
 						<button onClick={() => toggleAdminState("addStaff")} className="metric_btn">Add Staff</button>
 					</span>
 				</section>
-				<section className="flex flex-row flex-wrap px-8 gap-4 bg-slate-100">
+				<section className="flex flex-col items-center md:items-start md:flex-row md:flex-wrap md:px-8 gap-4 bg-slate-100 w-full">
 					<div className="metric_cards bg-white">
 						<span className="card_header">Total number of clients</span>
 						<span className="flex flex-col items-center gap-4">

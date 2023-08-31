@@ -9,7 +9,7 @@ function addProfit() {
 	const handleUsernameChange = (e) => setUsername(e.target.value);
 
 	return (
-		<div className="bg-transparent flex flex-col gap-4 p-2 absolute h-[70%] w-[80%] top-20">
+		<div className="bg-transparent flex flex-col gap-4 p-2 absolute md:h-[70%] md:w-[80%] top-20">
 			<section className="flex flex-row justify-between py-2">
 				<h2 className="text-xl font-semibold text-gray-100">Fund Profit</h2>
 				<button className="reduce_btn" type="submit">

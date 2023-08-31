@@ -6,7 +6,7 @@
 
 * {
 	font-family: "Nunito", sans-serif;
-	/* outline: 1px solid green; */
+	outline: 1px solid green;
 }
 
 .actions-cards {
@@ -21,7 +21,10 @@
 }
 
 .accounts-section {
-	@apply text-xs px-4;
+	@apply text-xs  px-4;
+}
+.accounts-section p {
+	@apply text-gray-800 font-semibold;
 }
 
 .accounts-btn:hover {
@@ -46,7 +49,7 @@
 	@apply relative ml-auto hover:bg-slate-400 rounded-md p-1 duration-200;
 }
 .metric_cards {
-	@apply w-[280px] h-[180px] p-4 rounded-md shadow-lg relative bottom-12 flex flex-col gap-2 justify-between py-6;
+	@apply w-[90%] md:w-[280px] h-[180px] p-4 rounded-md shadow-lg relative bottom-12 flex flex-col gap-2 justify-between py-6;
 }
 .metric_btn {
 	@apply w-[8rem] h-[2.5rem] rounded-md font-semibold text-blue-600 shadow-lg bg-white hover:bg-slate-50;
@@ -62,13 +65,13 @@
 /* Add Staff */
 
 #staff-signup_formSection {
-	@apply h-full flex flex-row gap-2;
+	@apply h-full w-full flex flex-col md:flex-row gap-2;
 }
 #staff_form_main {
-	@apply flex flex-col gap-10 bg-white shadow-md w-[90%] md:w-[60%] h-[460px] py-2 md:px-5 rounded m-auto mt-5;
+	@apply flex flex-col gap-10 bg-white shadow-md w-[90%] md:w-[60%] md:h-[460px] py-2 md:px-5 rounded m-auto mt-5;
 }
-.staff-input_span {
-	@apply w-full;
+.staff-input_section span {
+	@apply w-full px-3 md:px-0;
 }
 
 /* sign-in form. */
@@ -131,7 +134,7 @@
 
 /* payment methods */
 .method_cards {
-	@apply w-[280px] h-[220px] rounded-md p-4 bg-white flex flex-col gap-2 shadow;
+	@apply w-full md:w-[280px] h-[220px] rounded-md p-4 bg-white flex flex-col gap-2 shadow;
 }
 .method_cards-section {
 	@apply flex flex-col gap-2;

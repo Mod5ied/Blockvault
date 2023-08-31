@@ -25,8 +25,8 @@ function addStaff() {
 	const confirmPasswordStyle = passwordMatch ? {} : { border: "2px solid red" };
 
 	return (
-		<div className="bg-transparent flex flex-col gap-4 p-2 absolute h-[70%] w-[80%] top-20">
-			<section className="flex flex-row justify-between py-2">
+		<div className="h-[70%] w-full md:w-[80%] bg-transparent flex flex-col gap-4 py-2 px-0 md:p-2 absolute top-20">
+			<section className="flex flex-row justify-between py-2 px-4 md:px-0">
 				<h2 className="text-xl font-semibold text-gray-100">Add Staff</h2>
 				<button onClick={() => useToggleState("addStaff")} className="reduce_btn" type="submit">
 					Manage Staff
@@ -35,11 +35,11 @@ function addStaff() {
 
 			<form id="staff_form_main" onSubmit={handleSubmit}>
 				<section className="w-full h-[15%] border-b border-gray-100">
-					<h2 className="py-2 text-xl md:text-2xl font-semibold">Add Staff</h2>
+					<h2 className="py-2 px-3 md:px-0 text-xl md:text-2xl font-semibold">Add Staff</h2>
 				</section>
 
 				<section id="staff-signup_formSection">
-					<span className="flex flex-col justify-between h-full p-2 w-[50%]">
+					<span className="flex flex-col justify-between h-full p-2 w-full md:w-[50%]">
 						<div class="staff-input_section">
 							<span className="input_span">
 								<label htmlFor="username">First name</label>
@@ -60,7 +60,7 @@ function addStaff() {
 						</div>
 					</span>
 
-					<span className="flex flex-col justify-between h-full p-2 w-[50%]">
+					<span className="flex flex-col justify-between h-full p-2 w-full md:w-[50%]">
 						<div class="staff-input_section">
 							<span className="input_span">
 								<label htmlFor="username">Username</label>
@@ -89,7 +89,7 @@ function addStaff() {
 					</span>
 				</section>
 
-				<span>
+				<span className="px-3 md:px-0">
 					<button disabled={!passwordMatch} type="submit" className="reduce_submit_btn">
 						Add Staff
 					</button>

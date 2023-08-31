@@ -4,7 +4,7 @@ import { EventContext } from "../../../main";
 
 function paymentMethod(prop) {
 	const toggleAdminState = useToggleState(adminState);
-	const emitter = useContext(EventContext);
+	// const emitter = useContext(EventContext);
 
 	const handleToggleState = (coin) => {
 		// emitter.emit("toggleCoin", { coin: coin });
@@ -12,14 +12,14 @@ function paymentMethod(prop) {
 	};
 
 	return (
-		<div className="bg-transparent flex flex-col gap-8 p-2 absolute h-[70%] w-[80%] top-20">
+		<div className="bg-transparent flex flex-col gap-8 p-2 absolute md:h-[70%] w-full md:w-[80%] top-20">
 			<section className="flex flex-row justify-between py-2">
-				<span className="flex flex-col gap-6">
+				<span className="flex flex-col justify-center md:justify-start gap-6">
 					<h2 className="text-xl font-semibold text-gray-100">Payment Method</h2>
 				</span>
 				<button className="reduce_btn h-11">Add Payment Method</button>
 			</section>
-			<section className="flex flex-row w-full gap-8 ">
+			<section className="flex flex-col items-center md:items-start md:flex-row w-full gap-8 ">
 				<div className="method_cards">
 					<section>
 						<h3>Bitcoin</h3>

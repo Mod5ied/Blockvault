@@ -93,7 +93,7 @@ function signUp() {
 							</button>
 						</section>
 						<section className="md:p-2">
-							<p className="p-2 text-sm md:font-semibold flex flex-row items-center gap-1">
+							<p className="p-2 text-gray-800 text-sm md:font-semibold flex flex-row items-center gap-1">
 								Already have an account?
 								<Link className="text-amber-600" to="/signin">
 									click to sign-in

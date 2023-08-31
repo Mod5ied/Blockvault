@@ -1,8 +1,9 @@
 import { ReactSVG } from "react-svg";
 import home from "../assets/home.svg";
 import exit from "../assets/exit.svg";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import users from "../assets/users.svg";
+import close from "../assets/close.svg";
 import bonus from "../assets/add-pay.svg";
 import payment from "../assets/method.svg";
 import deposit from "../assets/deposit.svg";
@@ -14,8 +15,9 @@ import reduceCash from "../assets/reduce-cash.svg";
 import { useNavigate } from "react-router-dom";
 import { animated, useSpring, useTransition } from "react-spring";
 import { adminState, useToggleState } from "../services/state/state";
+import { isMobile } from "react-device-detect";
 
-function sidebar() {
+function sidebar({ signal, setSignal }) {
 	const [dropDown, setDropdown] = useState(false);
 
 	const [dropState, setDropState] = useState({ depoDrop: false, withdrawDrop: false, usersDrop: false });
@@ -29,7 +31,7 @@ function sidebar() {
 	};
 
 	const props = useSpring({
-		width: isExpanded ? "20%" : "5%",
+		width: window.innerWidth <= 768 ? (signal ? "55%" : "0") : isExpanded ? "20%" : "5%",
 		config: { duration: 300 },
 	});
 
@@ -76,9 +78,13 @@ function sidebar() {
 		// 	});
 	};
 
+	// useEffect(() => {
+	// 	console.log(signal);
+	// }, [signal]);
+
 	return (
-		<animated.div style={props} className={`flex flex-col gap-8 overflow-hidden bg-white items-center border-r border-gray-300 h-screen justify-center`}>
-			{!isExpanded ? (
+		<animated.div style={props} className={`fixed left-0 z-30 flex flex-col gap-8 overflow-hidden bg-white items-center border-r border-gray-300 h-screen justify-center`}>
+			{!isExpanded && window.innerWidth > 768 ? (
 				<section id="hidden" onClick={handleExpand} className="h-[70px] grid content-center w-full hover:bg-slate-200 p-4 cursor-pointer">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-6 h-6 m-auto">
 						<path d="M10 3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM10 8.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM11.5 15.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0z" />
@@ -91,7 +97,10 @@ function sidebar() {
 					<nav>
 						<img src={Logo} alt="Cluxter-logo" className="w-full h-full" />
 					</nav>
-					<ReactSVG onClick={handleExpand} src={hamburg} className="m-auto text-lg p-2 rounded duration-200 hover:bg-slate-100" />
+					{!isMobile && isExpanded && <ReactSVG onClick={handleExpand} src={hamburg} className="m-auto text-lg p-2 rounded duration-200 hover:bg-slate-100" />}
+					{isMobile && isExpanded && (
+						<ReactSVG onClick={() => setSignal(!signal)} src={close} className="m-auto text-lg p-2 rounded duration-200 hover:bg-slate-100" />
+					)}
 				</section>
 			)}
 

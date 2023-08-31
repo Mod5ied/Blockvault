@@ -58,7 +58,7 @@ function signIn() {
 			</section>
 			<section className="p-2">
 			  <Link to="/reset_password" className="py-1 px-2 rounded-md underline hover:underline-offset-2">Forgotten Password</Link>
-			  <p className="p-2 text-sm md:font-semibold flex flex-row items-center gap-1">
+			  <p className="p-2 text-gray-800 text-sm md:font-semibold flex flex-row items-center gap-1">
 				Click here to
 				<Link className="text-amber-600" to="/signup">
 				  sign up

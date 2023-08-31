@@ -8,7 +8,7 @@ function account(prop) {
 				<Avatar className="w-[35%] " />
 				<span className="w-[65%] flex flex-col justify-center gap-2">
 					<h3 className="font-semibold"> {prop.role || "admin"} </h3>
-					<p className="text-xs"> {prop.email || "admin@email.com"} </p>
+					<p className="text-xs text-gray-800 font-semibold"> {prop.email || "admin@email.com"} </p>
 					{/* make the btn below reusable */}
 					<button className="accounts-btn font-semibold text-gray-200 text-xs p-2 rounded bg-blue-800 w-[120px]">View Profile</button>
 				</span>

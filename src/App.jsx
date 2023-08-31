@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import SignIn from "./views/signin/signin";
 import SignUp from "./views/signup/signup";
 import { useNavigate, useRoutes, Navigate } from "react-router-dom";
-import AdminDashboard from "./views/Admin/main/dashboard";
+import AdminDashboard from "./views/Admin/dashboard";
 import GuestDashboard from "./views/Users/main/dashboard";
 import ResetPassword from "./views/recovery/forgotPassword";
 

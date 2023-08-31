@@ -23,8 +23,8 @@ function approvedDepo() {
 	const toggleAdminState = useToggleState(adminState);
 
 	return (
-		<div className="bg-transparent flex flex-col gap-4 p-2 absolute h-full w-[80%] top-20">
-			<section className="flex flex-row justify-between py-2">
+		<div className="bg-transparent flex flex-col items-center md:items-start gap-4 py-2 px-0 md:p-2 absolute h-full w-full md:w-[80%] top-20">
+			<section className="flex flex-row justify-between w-full py-2 px-4 md:px-0">
 				<h2 className="text-xl font-semibold text-gray-100">Approved Payment</h2>
 				<button onClick={() => toggleAdminState("addStaff")} className="reduce_btn" type="submit">
 					Add Staff
@@ -32,15 +32,15 @@ function approvedDepo() {
 			</section>
 
 			{/* White card */}
-			<section className="w-full flex flex-col gap-8 bg-white rounded-md px-5 py-3 border">
+			<section className="w-[95%] md:w-full flex flex-col gap-8 bg-white rounded-md md:px-5 py-3 border">
 				<div>
-					<h2 className="text-xl text-gray-700">Approved Payment</h2>
+					<h2 className="text-xl text-gray-700 font-semibold md:font-medium">Approved Payment</h2>
 				</div>
 
 				{/* table section. */}
-				<div className="flex flex-col gap-4 w-full">
-					<div className="flex flex-row justify-between">
-						<span className="flex flex-row gap-1 items-center">
+				<div className="flex flex-col gap-4 md:w-full overflow-x-scroll">
+					<div className="flex flex-col md:flex-row justify-center md:justify-between overflow-x-scroll">
+						<span className="flex flex-row gap-1 items-center w-full md:w-1/2">
 							Show
 							<p className="flex flex-row gap-2 items-center justify-center px-1 rounded-md hover:bg-gray-200 border">
 								10
@@ -59,35 +59,35 @@ function approvedDepo() {
 							entries
 						</span>
 
-						<span className="flex flex-row items-center gap-1">
+						<span className="flex flex-row items-center md:justify-end gap-1 w-full md:w-1/2">
 							Search
 							<input type="text" className="border bg-gray-50 rounded-md py-1 px-2" />
 						</span>
 					</div>
 
 					{/* table below: */}
-					<div className="flex flex-col w-full">
-						<span className="flex flex-row w-full text-gray-100 bg-blue-500 rounded-t-md">
-							<h3 className="h-[60px] w-[10%] flex items-center justify-between px-1 ml-5">
+					<div className="flex flex-col w-full overflow-x-scroll">
+						<span className="flex flex-row md:w-full text-gray-100 bg-blue-500 rounded-t-md">
+							<h3 className="h-[60px] w-[15%] md:w-[10%] flex items-center justify-between px-1 ml-5">
 								S.N <ReactSVG src={arrDouble} className="text-gray-600" />
 							</h3>
-							<h3 className="h-[60px] w-[35%] flex items-center justify-between px-1 ml-5">
+							<h3 className="h-[60px] w-[40%] md:w-[35%] flex items-center justify-between px-1 ml-5">
 								Details <ReactSVG src={arrDouble} className="text-gray-600" />
 							</h3>
-							<h3 className="h-[60px] w-[20%] flex items-center justify-between px-1 ml-5">
+							<h3 className="h-[60px] w-[25%] md:w-[20%] flex items-center justify-between px-1 ml-5">
 								Username <ReactSVG src={arrDouble} className="text-gray-600" />
 							</h3>
-							<h3 className="h-[60px] w-[20%] flex items-center justify-between px-1 ml-5">
+							<h3 className="h-[60px] w-[20%] md:w-[20%] flex items-center justify-between px-1 ml-5">
 								Amount <ReactSVG src={arrDouble} className="text-gray-600" />
 							</h3>
-							<h3 className="h-[60px] w-[25%] flex items-center justify-between px-1 ml-5">
+							<h3 className="h-[60px] w-[29%] md:w-[25%] flex items-center justify-between px-1 ml-5">
 								Status
 							</h3>
 						</span>
 						{/* 10 list below */}
 						{users.map((user, index) => {
 							return (
-								<span className={`flex flex-row w-full ${index % 2 === 0 ? "bg-gray-200" : "bg-white"}`}>
+								<span className={`flex flex-row md:w-full ${index % 2 === 0 ? "bg-gray-200" : "bg-white"}`}>
 									<p className="h-[63px] w-[10%] flex items-center justify-between px-1 ml-5">{user.id}</p>
 									<div className="h-[63px] w-[35%] flex flex-col justify-between px-1 py-1 ml-5 overflow-hidden">
 										<h5 className="text-sm">{user.details[0]}</h5>
