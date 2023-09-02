@@ -1,6 +1,3 @@
-// import React from 'react'
-// import bgImage from "../assets/slide1.jpg";
-// import { Carousel } from "react-carousel-rtl";
 import { useEffect } from "react";
 import { ReactSVG } from "react-svg";
 import left from "../assets/left.svg";
@@ -85,6 +82,8 @@ function homepage() {
 	const redirectToDepo = () => navigator("/signup");
 	const redirectToSignup = () => navigator("/signup");
 	const redirectToSignin = () => navigator("/signin");
+	const redirectToAbout = () => navigator("/about")
+	const redirectToContact = () => navigator("/contact")
 
 	return (
 		<div id="homepage-main" className="flex flex-col h-screen">
@@ -113,12 +112,12 @@ function homepage() {
 						<h1 className="text-3xl font-bold">CLUXTERCOIN</h1>
 					</span>
 					<span className="w-[30%] flex flex-row items-center justify-between">
-						<a className="border-orange-500 hover:border-b" href="">Home</a>
-						<a className="border-orange-500 hover:border-b" href="">About us</a>
-						<a className="border-orange-500 hover:border-b" href="">Faq</a>
-						<a className="border-orange-500 hover:border-b" href="">Contact</a>
-						<a className="border-orange-500 hover:border-b" href="">Sign-In</a>
-						<a className="border-orange-500 hover:border-b" href="">Sign-Up</a>
+						<a className="border-orange-500 hover:border-b" href="#">Home</a>
+						<a onClick={redirectToAbout} className="border-orange-500 hover:border-b">About us</a>
+						{/* <a className="border-orange-500 hover:border-b" href="">Faq</a> */}
+						<a onClick={redirectToContact} className="border-orange-500 hover:border-b">Contact</a>
+						<a onClick={redirectToSignin} className="border-orange-500 hover:border-b">Sign-In</a>
+						<a onClick={redirectToSignup} className="border-orange-500 hover:border-b">Sign-Up</a>
 					</span>
 					<span className="w-[12%] flex flex-row items-center justify-around">
 						<ion-icon class="text-orange-500 bg-stone-200 p-2 rounded-full" name="logo-facebook"></ion-icon>
@@ -441,11 +440,11 @@ function homepage() {
 					</span>
 					<span className="w-[30%] flex flex-col gap-5">
 						<h3 className="text-2xl font-bold text-stone-100">Quick Links</h3>
-						<span className="flex flex-col gap-4">
-							<p className="text-sm font-light text-stone-300">About Us</p>
-							<p className="text-sm font-light text-stone-300">Contact Us</p>
-							<p className="text-sm font-light text-stone-300">Blog</p>
-							<p className="text-sm font-light text-stone-300">Terms & Condition</p>
+						<span className="w-[50%] flex flex-col gap-4">
+							<button onClick={redirectToAbout} className="text-sm font-light text-left text-stone-300">About Us</button>
+							<button onClick={redirectToContact} className="text-sm font-light text-left text-stone-300">Contact Us</button>
+							<button disabled className="text-sm font-light text-left text-stone-300">Blog</button>
+							<button disabled className="text-sm font-light text-left text-stone-300">Terms & Condition</button>
 						</span>
 					</span>
 					<div className="w-[40%] flex flex-col gap-5">

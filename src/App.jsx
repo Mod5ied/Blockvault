@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import SignIn from "./views/signin/signin";
 import SignUp from "./views/signup/signup";
+import Contact from "./components/contact";
 import Homepage from "./components/homepage";
+import Aboutpage from "./components/aboutpage";
 import AdminDashboard from "./views/Admin/dashboard";
 import GuestDashboard from "./views/Users/main/dashboard";
 import ResetPassword from "./views/recovery/forgotPassword";
@@ -26,6 +28,8 @@ function App() {
 	let element = useRoutes([
 		/* below should route to the sign-in page, but by default the Home page */
 		{ path: "/", element: <Homepage /> },
+		{ path: "/contact", element: <Contact /> },
+		{ path: "/about", element: <Aboutpage /> },
 		{ path: "/signin", element: <SignIn /> },
 		{ path: "/signup", element: <SignUp /> },
 		{ path: "/reset_password", element: <ResetPassword /> },

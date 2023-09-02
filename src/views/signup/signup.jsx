@@ -38,10 +38,10 @@ function signUp() {
 	const confirmPasswordStyle = passwordMatch ? {} : { border: "2px solid red" };
 
 	return (
-		<div className="bg-gray-100 h-screen py-12">
+		<div className="h-screen py-12 bg-gray-100 font-body">
 			<form onSubmit={handleSignUp} id="signup_form_main">
 				<section className="w-full h-[10%]">
-					<h2 className="py-2 text-xl md:text-2xl font-semibold border-b border-slate-200">SIGNUP</h2>
+					<h2 className="py-2 text-xl font-semibold border-b md:text-2xl border-slate-200">SIGN-UP</h2>
 				</section>
 
 				<section id="signup_form_section">
@@ -83,17 +83,17 @@ function signUp() {
 					</div>
 
 					<div id="signup_submit_section">
-						<span className="p-2 flex flex-row items-center gap-2">
+						<span className="flex flex-row items-center gap-2 p-2">
 							<input type="checkbox" />
 							<p>I accept the conditions</p>
 						</span>
-						<section className="p-2 flex justify-center">
+						<section className="flex justify-center p-2">
 							<button type="submit" className="signin_submit_btn">
 								SignUp
 							</button>
 						</section>
 						<section className="md:p-2">
-							<p className="p-2 text-gray-800 text-sm md:font-semibold flex flex-row items-center gap-1">
+							<p className="flex flex-row items-center gap-1 p-2 text-sm text-gray-800 md:font-semibold">
 								Already have an account?
 								<Link className="text-amber-600" to="/signin">
 									click to sign-in

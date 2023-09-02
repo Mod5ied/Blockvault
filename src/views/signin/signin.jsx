@@ -8,7 +8,7 @@ function signIn() {
   const navigate = useNavigate();
 
   const handleSignIn = () => {
-	navigate("/admin/dashboard")
+	navigate("/signin")
 	// Prepare the data to be sent to the backend
 	const data = {
 	  username: username,
@@ -17,7 +17,6 @@ function signIn() {
 
 	// Send the data to the backend
 	// This is a placeholder and should be replaced with the actual code to send the data
-	console.log(data);
 
 	return false;
   };
@@ -33,10 +32,10 @@ function signIn() {
   };
 
   return (
-	<div className="bg-gray-100 h-screen py-12">
-	  <form onClick={handleSignIn} id="signin_form_main">
+	<div className="h-screen py-12 bg-gray-100 font-body">
+	  <form onClick={() => handleSignIn} id="signin_form_main">
 		<section className="w-full h-[20%]">
-		  <h2 className="py-2 text-2xl font-semibold border-b border-slate-200">SIGNIN</h2>
+		  <h2 className="py-2 text-2xl font-semibold border-b border-slate-200">SIGN-IN</h2>
 		</section>
 
 		{authStatus && <p id="form_error_status">Unauthorized login request</p>}
@@ -53,12 +52,12 @@ function signIn() {
 			</span>
 		  </div>
 		  <div id="signin_submit_section">
-			<section className="p-2 flex justify-center">
+			<section className="flex justify-center p-2">
 			  <button className="signin_submit_btn">SignIn</button>
 			</section>
 			<section className="p-2">
-			  <Link to="/reset_password" className="py-1 px-2 rounded-md underline hover:underline-offset-2">Forgotten Password</Link>
-			  <p className="p-2 text-gray-800 text-sm md:font-semibold flex flex-row items-center gap-1">
+			  <Link to="/reset_password" className="px-2 py-1 underline rounded-md hover:underline-offset-2">Forgotten Password</Link>
+			  <p className="flex flex-row items-center gap-1 p-2 text-sm text-gray-800 md:font-semibold">
 				Click here to
 				<Link className="text-amber-600" to="/signup">
 				  sign up
