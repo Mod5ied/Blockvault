@@ -1,19 +1,73 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500;700;800;900&display=swap');
 @tailwind components;
 @tailwind utilities;
 @tailwind base;
 
 * {
-	font-family: "Nunito", sans-serif;
+	/* font-family: "Nunito", sans-serif; */
 	/* outline: 1px solid green; */
+}
+
+#homepage-main {
+	/* background-image: url("./assets/slide1.jpg"); */
+	/* background-repeat: no-repeat;
+	background-size: cover; */
+	font-family: 'Roboto Slab', serif;
+}
+#numbers-section {
+	background-image: url("./assets/slide1.jpg");
+	background-repeat: no-repeat;
+	background-clip: border-box;
+	background-size: cover;
+	font-family: 'Roboto Slab', serif;
+}
+#numbers-sec {
+	background: linear-gradient(rgba(15, 15, 112, 0.304), rgba(15, 15, 112, 0.296));
+}
+
+#build-section {
+	background-image: url("./assets/slide1.jpg");
+	background-repeat: no-repeat;
+	background-clip: border-box;
+	background-size: cover;
+}
+#build-sec {
+	background: linear-gradient(rgba(15, 15, 112, 0.304), rgba(15, 15, 112, 0.296));
+}
+
+#hue {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+#hue::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(rgba(15, 15, 112, 0.304), rgba(15, 15, 112, 0.296));
+	z-index: 1;
+}
+
+#slide1,
+#slide2 {
+	position: relative;
+	z-index: 2;
 }
 
 .actions-cards {
 	@apply w-[80px] h-[90px] flex flex-col justify-center items-center text-gray-600 border rounded-sm;
 }
 .actions-cards p {
-	@apply text-blue-400 text-xs text-center font-medium cursor-pointer;
+	@apply text-xs font-medium text-center text-blue-400 cursor-pointer;
 }
 
 .actions-cards:hover {
@@ -21,10 +75,10 @@
 }
 
 .accounts-section {
-	@apply text-xs  px-4;
+	@apply px-4 text-xs;
 }
 .accounts-section p {
-	@apply text-gray-800 font-semibold;
+	@apply font-semibold text-gray-800;
 }
 
 .accounts-btn:hover {
@@ -33,20 +87,20 @@
 
 /* sidebar style */
 .sidebar_links {
-	@apply p-2 flex flex-row justify-start items-center gap-2 text-sm w-full rounded text-gray-700 hover:bg-slate-200 hover:duration-200 ease-in-out;
+	@apply flex flex-row items-center justify-start w-full gap-2 p-2 text-sm text-gray-700 ease-in-out rounded hover:bg-slate-200 hover:duration-200;
 }
 .sidebar-links_drop {
 	@apply flex flex-col gap-1;
 }
 .sidebar-links_drop button {
-	@apply text-center py-2 hover:bg-slate-100 rounded-md;
+	@apply py-2 text-center rounded-md hover:bg-slate-100;
 }
 .sidebar-links_drop button p {
 	@apply w-[50%] ml-[23%] text-left text-xs text-gray-500 font-semibold;
 }
 
 .sidebar_arrDown {
-	@apply relative ml-auto hover:bg-slate-400 rounded-md p-1 duration-200;
+	@apply relative p-1 ml-auto duration-200 rounded-md hover:bg-slate-400;
 }
 .metric_cards {
 	@apply w-[90%] md:w-[280px] h-[180px] p-4 rounded-md shadow-lg relative bottom-12 flex flex-col gap-2 justify-between py-6;
@@ -56,7 +110,7 @@
 }
 
 .card_header {
-	@apply text-lg text-gray-700 font-semibold;
+	@apply text-lg font-semibold text-gray-700;
 }
 .metric_numbs {
 	@apply text-3xl font-bold;
@@ -65,7 +119,7 @@
 /* Add Staff */
 
 #staff-signup_formSection {
-	@apply h-full w-full flex flex-col md:flex-row gap-2;
+	@apply flex flex-col w-full h-full gap-2 md:flex-row;
 }
 #staff_form_main {
 	@apply flex flex-col gap-10 bg-white shadow-md w-[90%] md:w-[60%] md:h-[460px] py-2 md:px-5 rounded m-auto mt-5;
@@ -90,7 +144,7 @@
 }
 
 .reduce_btn {
-	@apply py-2 px-4 rounded-lg border text-gray-100 hover:bg-blue-700 duration-200;
+	@apply px-4 py-2 text-gray-100 duration-200 border rounded-lg hover:bg-blue-700;
 }
 #reset_form_main {
 	@apply flex flex-col gap-4 justify-between bg-white shadow-md w-[90%] md:w-[36%] h-[310px] py-10 px-5 md:px-12 rounded m-auto;
@@ -112,7 +166,7 @@
 	@apply flex flex-col;
 }
 .input_span_input {
-	@apply px-4 py-2 bg-gray-50 border rounded-md hover:border-gray-200 focus:ring-2 focus:ring-amber-400 focus:outline-none;
+	@apply px-4 py-2 border rounded-md bg-gray-50 hover:border-gray-200 focus:ring-2 focus:ring-amber-400 focus:outline-none;
 }
 #signin_submit_section {
 	@apply flex flex-col justify-start gap-4;
@@ -126,10 +180,10 @@
 
 /* reduce funds, et.al */
 .reduce_Drop {
-	@apply py-1 px-2 w-full text-left hover:bg-blue-700 hover:text-gray-200;
+	@apply w-full px-2 py-1 text-left hover:bg-blue-700 hover:text-gray-200;
 }
 .reduce_submit_btn {
-	@apply p-2 bg-blue-600 hover:bg-blue-400 duration-200 text-white text-sm rounded-md shadow border-none;
+	@apply p-2 text-sm text-white duration-200 bg-blue-600 border-none rounded-md shadow hover:bg-blue-400;
 }
 
 /* payment methods */
@@ -143,28 +197,28 @@
 	@apply py-2 px-1 rounded-lg w-[50%] text-sm text-gray-50 font-medium bg-blue-800 hover:bg-blue-600 duration-200;
 }
 .method_cards section h3 {
-	@apply text-lg text-gray-600 font-medium py-2 border-b;
+	@apply py-2 text-lg font-medium text-gray-600 border-b;
 }
 
 /* USER-ROLE STYLES */
 .sidebar-links {
-	@apply py-2 px-8 flex font-semibold flex-row justify-start items-center gap-3 text-sm w-full rounded text-gray-100 hover:text-gray-500 duration-200 ease-in-out;
+	@apply flex flex-row items-center justify-start w-full gap-3 px-8 py-2 text-sm font-semibold text-gray-100 duration-200 ease-in-out rounded hover:text-gray-500;
 }
 .sidebar-links-center {
-	@apply py-2 px-8 flex font-semibold flex-row justify-center items-center gap-3 text-sm w-full rounded text-gray-100 hover:text-gray-500 duration-200;
+	@apply flex flex-row items-center justify-center w-full gap-3 px-8 py-2 text-sm font-semibold text-gray-100 duration-200 rounded hover:text-gray-500;
 }
 /* metrics */
 .dash_cards {
 	@apply h-[100px] w-full md:w-[440px] p-3 rounded-md shadow-md bg-stone-900;
 }
 .dash_cards h3 {
-	@apply text-gray-100 font-semibold text-sm;
+	@apply text-sm font-semibold text-gray-100;
 }
 .dash_cards p {
-	@apply text-yellow-400 font-bold;
+	@apply font-bold text-yellow-400;
 }
 .dash_cards button {
-	@apply px-3 py-1 rounded-md bg-gray-400 text-blue-700 font-bold text-xs mt-2 border-none shadow-gray-200;
+	@apply px-3 py-1 mt-2 text-xs font-bold text-blue-700 bg-gray-400 border-none rounded-md shadow-gray-200;
 }
 .dash_cards_ref {
 	@apply w-full h-[250px] md:w-full flex flex-col justify-start p-3 rounded-md shadow-md bg-stone-900;
@@ -184,23 +238,23 @@ p {
 	@apply flex flex-col gap-2;
 }
 #deposit_form span label {
-	@apply text-gray-200 text-sm;
+	@apply text-sm text-gray-200;
 }
 .deposit_form_input {
-	@apply w-full py-2 px-4 rounded-md bg-stone-200;
+	@apply w-full px-4 py-2 rounded-md bg-stone-200;
 }
 #btn {
 	@apply px-3 py-2 w-[55%] md:w-[30%] bg-red-600 hover:bg-red-500 duration-200 text-center text-sm text-gray-100 font-bold rounded-md;
 }
 /* withdraw styles. */
 #withdraw_form {
-	@apply w-full bg-stone-900 rounded-md shadow-md p-5 flex flex-col gap-4 md:gap-6;
+	@apply flex flex-col w-full gap-4 p-5 rounded-md shadow-md bg-stone-900 md:gap-6;
 }
 #withdraw_form span {
-	@apply flex flex-col md:flex-row gap-2 md:gap-0 justify-between md:items-center;
+	@apply flex flex-col justify-between gap-2 md:flex-row md:gap-0 md:items-center;
 }
 #withdraw_form span label {
-	@apply text-gray-200 text-sm;
+	@apply text-sm text-gray-200;
 }
 .withdraw_form_input {
 	@apply w-full md:w-[80%] py-2 px-4 rounded-md text-stone-100 bg-stone-800 border border-stone-200 focus:border-blue-600;
@@ -217,13 +271,13 @@ p {
 	@apply w-full md:w-[68%] py-5 px-8 rounded-md shadow-md bg-white flex flex-col gap-6;
 }
 #account_form h3 {
-	@apply text-xl text-slate-900 font-semibold;
+	@apply text-xl font-semibold text-slate-900;
 }
 #account_form span {
 	@apply flex flex-col gap-2;
 }
 #account_form span label {
-	@apply text-gray-800 text-sm;
+	@apply text-sm text-gray-800;
 }
 .account_form_input {
 	@apply w-full md:w-[80%] py-2 px-4 bg-white rounded-md border border-gray-400 hover:border-blue-500 focus:border-blue-600;
@@ -248,5 +302,5 @@ p {
 	@apply px-4 py-2 w-[28%] bg-stone-500 hover:bg-stone-600 duration-200 text-sm text-gray-100 font-bold rounded-md;
 }
 .security_btn2 {
-	@apply px-4 py-2 w-[20%] bg-stone-200 hover:bg-stone-600 duration-200 text-sm text-blue-100 font-bold rounded-md
+	@apply px-4 py-2 w-[20%] bg-stone-200 hover:bg-stone-600 duration-200 text-sm text-blue-100 font-bold rounded-md;
 }

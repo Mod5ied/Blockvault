@@ -22,7 +22,7 @@ function Dashboard(props) {
 	const [signal, setSignal] = useState(false);
 
 	return (
-		<div className="flex flex-row">
+		<div className="flex flex-row font-body">
 			<Sidebar signal={signal} setSignal={setSignal} />
 			<section className="h-[220px] w-full md:w-[95%] md:ml-auto flex flex-col justify-between items-center bg-blue-600">
 				<Header setSignal={setSignal} signal={signal} />

@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import SignIn from "./views/signin/signin";
 import SignUp from "./views/signup/signup";
-import { useNavigate, useRoutes, Navigate } from "react-router-dom";
+import Homepage from "./components/homepage";
 import AdminDashboard from "./views/Admin/dashboard";
 import GuestDashboard from "./views/Users/main/dashboard";
 import ResetPassword from "./views/recovery/forgotPassword";
+import { useNavigate, useRoutes, Navigate } from "react-router-dom";
 
 function App() {
 	const navigate = useNavigate();
@@ -24,7 +25,7 @@ function App() {
 
 	let element = useRoutes([
 		/* below should route to the sign-in page, but by default the Home page */
-		{ path: "/", element: <Navigate to="/dashboard" /> },
+		{ path: "/", element: <Homepage /> },
 		{ path: "/signin", element: <SignIn /> },
 		{ path: "/signup", element: <SignUp /> },
 		{ path: "/reset_password", element: <ResetPassword /> },

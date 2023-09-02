@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@testing-library/react": "^13.2.0",
+    "@trendyol-js/react-carousel": "^3.0.2",
     "json-server": "^0.17.0",
     "mitt": "^3.0.1",
-    "react": "18.2.0",
+    "react": "^18.2.0",
+    "react-carousel-rtl": "^3.0.4",
     "react-country-region-selector": "^3.6.1",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",

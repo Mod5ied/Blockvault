@@ -4,7 +4,8 @@ module.exports = {
     extend: {
       fontFamily: {
         body: ["Nunito"],
-        para: ["Inter"]
+        para: ["Inter"],
+        home: ['Roboto Slab']
       },
     },
   },
